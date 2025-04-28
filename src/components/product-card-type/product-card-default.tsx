@@ -1,24 +1,25 @@
-import { ProductModel } from "app/products/product.model";
+import { ProductModel } from "@/models/product.model";
 import Image from "next/image";
 
-interface ProductCardCompactProps {
+interface ProductCardDefaultProps {
   product: ProductModel;
 }
 
-export default function ProductCardCompact({
+export default function ProductCardDefault({
   product,
-}: ProductCardCompactProps) {
+}: ProductCardDefaultProps) {
   return (
-    <div className="flex flex-row gap-x-3 items-center max-w-sm bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700 p-3 cursor-pointer">
+    <div className="flex flex-col gap-y-3 items-center max-w-sm bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700 p-3 cursor-pointer">
       <Image
         src={product.image_url}
         width={300}
         height={300}
+        priority
         alt={`${product.name} image`}
-        className="w-1/3 rounded-2xl mb-auto"
+        className="w-full h-full rounded-2xl"
       />
 
-      <div className="w-2/3 border-l border-gray-200 pl-5">
+      <div className="flex flex-col w-full p-1.5 mt-auto">
         <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {product.name}
         </h5>
@@ -27,7 +28,7 @@ export default function ProductCardCompact({
           {product.description}
         </p>
 
-        <span className="font-semibold text-gray-900 dark:text-white">
+        <span className="font-semibold text-gray-900 dark:text-white ml-auto">
           {product.price.toLocaleString("en-US", {
             style: "currency",
             currency: "USD",

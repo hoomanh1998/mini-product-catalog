@@ -1,5 +1,8 @@
-import { ProductCardCompact, ProductCardDefault } from "@/ui/product-card-type";
-import { ProductModel } from "app/products/product.model";
+import {
+  ProductCardCompact,
+  ProductCardDefault,
+} from "@/components/product-card-type";
+import { ProductModel } from "@/models/product.model";
 
 interface ProductCardProps {
   product: ProductModel;

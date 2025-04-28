@@ -3,9 +3,9 @@
 import clsx from "clsx";
 import { use_drawer_store } from "@/store/drawer.store";
 import Link from "next/link";
-import CloseIcon from "./icons/close-icon";
-import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
+import { ROUTES } from "constants/routes.constant";
+import CloseIcon from "@/ui/icons/close-icon";
 
 export default function Drawer() {
   const { drawer_open, close_drawer } = use_drawer_store();
@@ -35,21 +35,23 @@ export default function Drawer() {
 
         <div className="flex flex-col w-full gap-y-2 mt-3">
           <Link
-            href="/admin"
+            href={ROUTES.Home}
+            onClick={close_drawer}
             className={`w-full capitalize text-white transition-colors hover:bg-cyan-700 py-2 px-5 rounded-xl ${clsx(
-              pathname === "/admin" && "bg-cyan-700"
+              pathname === ROUTES.Home && "bg-cyan-700"
             )}`}
           >
-            admin
+            home
           </Link>
 
           <Link
-            href="/products"
+            href={ROUTES.Admin}
+            onClick={close_drawer}
             className={`w-full capitalize text-white transition-colors hover:bg-cyan-700 py-2 px-5 rounded-xl ${clsx(
-              pathname === "/products" && "bg-cyan-700"
+              pathname === ROUTES.Admin && "bg-cyan-700"
             )}`}
           >
-            produtcs list
+            admin
           </Link>
         </div>
       </nav>

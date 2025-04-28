@@ -1,35 +1,44 @@
+import { createClient } from "@/utils/supabase/server";
 import { login, signup } from "./actions";
+import { redirect } from "next/navigation";
+import { ROUTES } from "constants/routes.constant";
+import Button from "@/ui/button";
+import Input from "@/ui/input";
 
-export default function Login() {
+export default async function LoginPage() {
+  const supabase = await createClient();
+  const { data } = await supabase.auth.getUser();
+  if (data.user) {
+    redirect(ROUTES.Admin);
+  }
+
   return (
-    <div className="flex items-center justify-center h-full">
-      <form
-        className="flex flex-col bg-gray-700 p-10 rounded-2xl max-w-sm gap-4"
-        method="POST"
-      >
-        <label htmlFor="email">Email:</label>
-        <input
-          className="border border-white"
-          id="email"
-          name="email"
-          type="email"
-          required
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          className="border border-white"
-          id="password"
-          name="password"
-          type="password"
-          required
-        />
-        <button className="bg-green-500" formAction={login}>
-          Log in
-        </button>
-        <button className="bg-cyan-400" formAction={signup}>
-          Sign up
-        </button>
-      </form>
+    <div className="flex items-center w-full justify-center min-h-screen bg-background">
+      <div className="w-full max-w-md p-8 space-y-6 bg-[var(--secondary)] rounded-2xl">
+        <form method="POST" className="space-y-4">
+          <Input id="email" name="email" type="email" label="email address" />
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            label="password"
+          />
+          <div className="flex flex-col gap-y-3 mt-5">
+            <Button formAction={login} type="submit" className="w-full">
+              Login
+            </Button>
+
+            <Button
+              formAction={signup}
+              type="submit"
+              className="w-full"
+              color="green"
+            >
+              SignUp
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
