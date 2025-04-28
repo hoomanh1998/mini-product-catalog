@@ -43,7 +43,13 @@ export default function UploadImageInput({ ...props }: UploadImageInputProps) {
         {image_url && (
           <div className="mt-6">
             <p className="text-sm mb-2">Image Preview:</p>
-            <Image src={image_url} alt="Uploaded" className="rounded-md" />
+            <Image
+              src={image_url}
+              alt="Uploaded"
+              width={250}
+              height={250}
+              className="rounded-md"
+            />
           </div>
         )}
       </div>
