@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { PRODUCTS_LIST_TABLE_HEADERS } from "./products-list-table.constant";
-import { ROUTES } from "constants/routes.constant";
 import { ProductModel } from "@/models/product.model";
-import DeleteIcon from "@/ui/icons/delete-icon";
-import { delete_product } from "app/admin/actions";
+import { delete_product } from "@/services/products/actions";
 import { useTransition } from "react";
+import Image from "next/image";
+import DeleteIcon from "@/ui/icons/delete-icon";
+import Link from "next/link";
 
 export default function ProductsListTable({
   products,
@@ -46,7 +46,7 @@ export default function ProductsListTable({
           {products.map((product) => (
             <tr
               key={product.id}
-              className="odd:bg-gray odd:dark:bg-background even:bg-background even:dark:bg-night"
+              className="odd:bg-background even:bg-gray even:dark:bg-night"
             >
               <td className="py-3 px-4">{product.id}</td>
               <td className="py-3 px-4 font-semibold">{product.name}</td>
@@ -65,12 +65,12 @@ export default function ProductsListTable({
                 {new Date(product.created_at).toLocaleDateString()}
               </td>
               <td className="px-6 py-4">
-                <a
-                  href={ROUTES.AdminEditProduct + `/${product.id}`}
+                <Link
+                  href={`?show_modal=edit&product_id=${product.id}`}
                   className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 >
                   Edit
-                </a>
+                </Link>
               </td>
               <td className="px-6 py-4">
                 <button
@@ -81,7 +81,7 @@ export default function ProductsListTable({
                   <DeleteIcon
                     width={24}
                     height={24}
-                    className="stroke-red-400"
+                    className="stroke-red-400 stroke-2"
                   />
                 </button>
               </td>

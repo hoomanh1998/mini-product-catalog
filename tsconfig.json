@@ -21,7 +21,8 @@
       "@/ui/*": ["ui/*"],
       "@/utils/*": ["utils/*"],
       "@/store/*": ["store/*"],
-      "@/models/*": ["models/*"]
+      "@/models/*": ["models/*"],
+      "@/constants/*": ["constants/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

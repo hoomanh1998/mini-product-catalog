@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import { ROUTES } from "constants/routes.constant";
+import { Routes } from "@/constants/routes.constant";
 
 export async function create_product(formData: FormData) {
   const supabase = await createClient();
@@ -32,8 +32,8 @@ export async function create_product(formData: FormData) {
 
   console.log("Product created successfully!");
 
-  revalidatePath(ROUTES.Admin);
-  redirect(ROUTES.Admin);
+  revalidatePath(Routes.Dashboard);
+  redirect(Routes.Dashboard);
 }
 
 export async function delete_product(product_id: number) {
@@ -48,18 +48,18 @@ export async function delete_product(product_id: number) {
     throw new Error(error.message);
   }
 
-  revalidatePath(ROUTES.Admin);
+  revalidatePath(Routes.Dashboard);
 }
 
 export async function update_product(formData: FormData) {
   const supabase = await createClient();
 
-  const product_id = formData.get("id") as string;
+  const product_id = parseInt(formData.get("id") as string);
   const name = formData.get("name") as string;
   const description = formData.get("description") as string;
   const price = parseFloat(formData.get("price") as string);
   const image = formData.get("image_url") as File;
-  let image_url: File | string | null = null;
+  let image_url: File | string | undefined = undefined;
 
   const { data: product } = await supabase
     .from("Products")
@@ -67,10 +67,12 @@ export async function update_product(formData: FormData) {
     .eq("id", product_id)
     .single();
 
-  if (image.size > 0) {
+  console.log("image", image);
+
+  if (image && image.size > 0) {
     image_url = await upload_image(formData);
   } else {
-    image_url = product.image_url;
+    image_url = product?.image_url;
   }
 
   if (!product_id || !name || !description || isNaN(price)) {
@@ -92,14 +94,14 @@ export async function update_product(formData: FormData) {
       price,
       image_url,
     })
-    .eq("id", parseInt(product_id));
+    .eq("id", product_id);
 
   if (error) {
     throw new Error(error.message);
   }
 
-  revalidatePath(ROUTES.Admin);
-  redirect(ROUTES.Admin);
+  revalidatePath(Routes.Dashboard);
+  redirect(Routes.Dashboard);
 }
 
 export async function upload_image(formData: FormData) {

@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import { ROUTES } from "constants/routes.constant";
+import { Routes } from "@/constants/routes.constant";
 
-export default async function AdminLayout({
+export default async function DashboardLayout({
   children,
   modal,
 }: {
@@ -12,13 +12,13 @@ export default async function AdminLayout({
   const supabase = await createClient();
   const { data, error } = await supabase.auth.getUser();
   if (error || !data?.user) {
-    redirect(ROUTES.Login);
+    redirect(Routes.Login);
   }
 
   return (
-    <div className="p-10 mx-auto">
+    <main className="w-full max-w-5xl p-10 mx-auto">
       {children}
       {modal}
-    </div>
+    </main>
   );
 }

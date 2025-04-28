@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type UploadImageInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -32,16 +33,17 @@ export default function UploadImageInput({ ...props }: UploadImageInputProps) {
 
       <div className="border border-foreground/30 p-6 rounded-xl">
         <input
+          id={props.id}
+          name={props.name}
           type="file"
           onChange={handle_file_change}
           className="w-full text-sm text-gray-500 file:mr-4 file:cursor-pointer file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
           required={!image_url}
-          {...props}
         />
         {image_url && (
           <div className="mt-6">
             <p className="text-sm mb-2">Image Preview:</p>
-            <img src={image_url} alt="Uploaded" className="rounded-md" />
+            <Image src={image_url} alt="Uploaded" className="rounded-md" />
           </div>
         )}
       </div>

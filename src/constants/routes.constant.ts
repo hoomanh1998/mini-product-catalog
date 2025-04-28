@@ -1,7 +1,7 @@
-export enum ROUTES {
+export enum Routes {
   Home = "/",
-  Admin = "/admin",
-  AdminAddProduct = "/admin/create-product",
-  AdminEditProduct = "/admin/edit-product",
   Login = "/login",
+  Dashboard = "/dashboard",
+  DashboardAddProduct = "/dashboard/create-product",
+  DashboardEditProduct = "/dashboard/edit-product",
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "@/ui/button";
-import { ROUTES } from "constants/routes.constant";
 import { useRouter } from "next/navigation";
 
 export default function AddNewProductButton() {
@@ -10,7 +9,7 @@ export default function AddNewProductButton() {
   return (
     <Button
       className="mt-5 mr-auto"
-      onClick={() => router.push(ROUTES.AdminAddProduct)}
+      onClick={() => router.push("?show_modal=add")}
     >
       Add new product
     </Button>

@@ -1,27 +1,30 @@
+"use server";
+
 import Input from "@/ui/input";
 import UploadImageInput from "@/ui/upload-image-input";
-import SubmitButton from "@/components/submit-button";
-import { update_product } from "../../actions";
-import { get_product_by_id } from "app/admin/loaders";
+import { update_product } from "@/services/products/actions";
+import SubmitButton from "./submit-button";
+import HeaderTitle from "@/ui/header-title";
+import { get_product_by_id } from "@/services/products/loaders";
 
-export default async function EditProductPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const { id } = await params;
-  const product = await get_product_by_id(parseInt(id));
+interface EditProductFormProps {
+  product_id: string;
+}
+
+export default async function EditProductForm({
+  product_id,
+}: EditProductFormProps) {
+  const product = await get_product_by_id(parseInt(product_id));
 
   return (
     <form
       action={update_product}
       className="flex flex-col bg-[var(--secondary)] text-foreground gap-4 w-md mx-auto"
     >
-      <h1 className="text-2xl font-bold">Edit Product</h1>
+      <HeaderTitle title="edit product" />
 
-      <input type="hidden" name="id" value={product.id} />
-
-      <div className="flex flex-col gap-y-3 mt-2">
+      <div className="flex flex-col gap-y-3">
+        <Input type="hidden" name="id" value={product.id} required />
         <Input
           id="name"
           name="name"
@@ -42,8 +45,8 @@ export default async function EditProductPage({
           id="price"
           name="price"
           type="number"
-          step="any"
           label="price"
+          step="any"
           defaultValue={product.price}
           required
         />
