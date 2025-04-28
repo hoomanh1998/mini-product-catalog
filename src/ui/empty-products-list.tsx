@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 
 interface EmptyProudctListProps extends React.HTMLAttributes<HTMLDivElement> {

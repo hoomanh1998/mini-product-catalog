@@ -1,3 +1,5 @@
+"use client";
+
 import { ProductModel } from "@/models/product.model";
 import Image from "next/image";
 

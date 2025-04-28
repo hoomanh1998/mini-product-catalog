@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { ProductCardType } from "@/models/product.model";
 
