@@ -1,15 +1,15 @@
-import AddNewProductButton from "@/components/add-new-product-button";
-import ProductsListTable from "@/components/products-list-table";
-import EmptyProudctList from "@/ui/empty-products-list";
-import HeaderTitle from "@/ui/header-title";
-import { get_products_list } from "@/services/products/loaders";
-import { Metadata } from "next";
-import EditProductForm from "@/components/edit-product-form";
-import CreateProductForm from "@/components/create-product-form";
-import { Modal } from "@/components/modal";
+import { get_products_list } from '@/services/products/loaders';
+import { Metadata } from 'next';
+import { Modal } from '@/components/modal';
+import ProductsListTable from '@/components/products-list-table';
+import EmptyProudctList from '@/ui/empty-products-list';
+import HeaderTitle from '@/ui/header-title';
+import EditProductForm from '@/components/products/edit-product-form';
+import CreateProductForm from '@/components/products/create-product-form';
+import AddNewProductButton from '@/components/products/add-new-product-button';
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: 'Dashboard',
 };
 
 type DashboardPageProps = {
@@ -40,13 +40,13 @@ export default async function DashboardPage({
         </section>
       )}
 
-      {show_modal === "edit" && (
+      {show_modal === 'edit' && (
         <Modal>
-          <EditProductForm product_id={product_id ?? ""} />
+          <EditProductForm product_id={product_id ?? ''} />
         </Modal>
       )}
 
-      {show_modal === "add" && (
+      {show_modal === 'add' && (
         <Modal>
           <CreateProductForm />
         </Modal>

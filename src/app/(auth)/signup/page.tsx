@@ -4,7 +4,7 @@ import { get_user } from '@/services/auth/loaders';
 import { Metadata } from 'next';
 import Input from '@/ui/input';
 import HeaderTitle from '@/ui/header-title';
-import SignupButton from '@/components/signup-button';
+import SignupButton from '@/components/auth/signup-button';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

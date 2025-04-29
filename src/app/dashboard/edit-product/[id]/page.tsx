@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import EditProductForm from "@/components/edit-product-form";
+import EditProductForm from '@/components/products/edit-product-form';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Dashboard - Edit Product",
+  title: 'Dashboard - Edit Product',
 };
 
 type EditProductPageProps = {
@@ -14,5 +14,5 @@ export default async function EditProductPage({
 }: EditProductPageProps) {
   const product_id = (await searchParams)?.product_id;
 
-  return <EditProductForm product_id={product_id ?? ""} />;
+  return <EditProductForm product_id={product_id ?? ''} />;
 }

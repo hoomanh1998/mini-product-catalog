@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Button from "@/ui/button";
-import { useRouter } from "next/navigation";
+import Button from '@/ui/button';
+import { useRouter } from 'next/navigation';
 
 export default function AddNewProductButton() {
   const router = useRouter();
@@ -9,7 +9,7 @@ export default function AddNewProductButton() {
   return (
     <Button
       className="mt-5 mr-auto"
-      onClick={() => router.push("?show_modal=add")}
+      onClick={() => router.push('?show_modal=add')}
     >
       Add new product
     </Button>

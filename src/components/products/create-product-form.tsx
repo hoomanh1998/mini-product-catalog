@@ -1,10 +1,10 @@
-"use server";
+'use server';
 
-import Input from "@/ui/input";
-import UploadImageInput from "@/ui/upload-image-input";
-import { create_product } from "@/services/products/actions";
-import SubmitButton from "./submit-button";
-import HeaderTitle from "@/ui/header-title";
+import Input from '@/ui/input';
+import UploadImageInput from '@/ui/upload-image-input';
+import { create_product } from '@/services/products/actions';
+import HeaderTitle from '@/ui/header-title';
+import SubmitButton from '../submit-button';
 
 export default async function CreateProductForm() {
   return (

@@ -1,11 +1,11 @@
-"use server";
+'use server';
 
-import Input from "@/ui/input";
-import UploadImageInput from "@/ui/upload-image-input";
-import { update_product } from "@/services/products/actions";
-import SubmitButton from "./submit-button";
-import HeaderTitle from "@/ui/header-title";
-import { get_product_by_id } from "@/services/products/loaders";
+import Input from '@/ui/input';
+import UploadImageInput from '@/ui/upload-image-input';
+import { update_product } from '@/services/products/actions';
+import HeaderTitle from '@/ui/header-title';
+import { get_product_by_id } from '@/services/products/loaders';
+import SubmitButton from '../submit-button';
 
 interface EditProductFormProps {
   product_id: string;
