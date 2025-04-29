@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
 interface EmptyProudctListProps extends React.HTMLAttributes<HTMLDivElement> {
   message: string;
@@ -13,8 +13,8 @@ export default function EmptyProudctList({
 }: EmptyProudctListProps) {
   return (
     <div
-      className={`w-full p-10 text-sm border rounded-2xl border-foreground/30 text-center ${clsx(
-        className
+      className={`w-full p-10 text-sm border rounded-2xl border-foreground/10 text-center ${clsx(
+        className,
       )}`}
       {...props}
     >

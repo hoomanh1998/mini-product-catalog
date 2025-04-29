@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
-import { ProductCardType } from "@/models/product.model";
+import clsx from 'clsx';
+import { ProductCardType } from '@/models/product.model';
 
 interface ProductCardTypeContainerButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,11 +18,11 @@ export default function ProductCardTypeContainerButton({
   const is_button_active = product_type === label;
 
   const button_classes = clsx(
-    "px-8 py-2 capitalize font-semibold transition-colors cursor-pointer",
+    'px-8 py-2 capitalize font-semibold transition-colors cursor-pointer',
     className,
     {
-      "bg-yellow dark:bg-night text-white": is_button_active,
-    }
+      'bg-yellow dark:bg-night text-white': is_button_active,
+    },
   );
 
   return (
