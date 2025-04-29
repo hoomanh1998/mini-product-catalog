@@ -1,7 +1,8 @@
 export enum Routes {
-  Home = "/",
-  Login = "/login",
-  Dashboard = "/dashboard",
-  DashboardAddProduct = "/dashboard/create-product",
-  DashboardEditProduct = "/dashboard/edit-product",
+  Home = '/',
+  Login = '/login',
+  SignUp = '/signup',
+  Dashboard = '/dashboard',
+  DashboardAddProduct = '/dashboard/create-product',
+  DashboardEditProduct = '/dashboard/edit-product',
 }

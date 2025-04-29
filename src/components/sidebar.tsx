@@ -1,42 +1,7 @@
-"use client";
+import { get_user } from '@/services/auth/loaders';
+import SidebarClient from './sidebar-client';
 
-import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Routes } from "@/constants/routes.constant";
-
-const links = [
-  {
-    label: "home",
-    href: Routes.Home,
-    is_active: (pathname: string) => pathname === Routes.Home,
-  },
-  {
-    label: "dashboard",
-    href: Routes.Dashboard,
-    is_active: (pathname: string) => pathname.includes(Routes.Dashboard),
-  },
-];
-
-export default function Sidebar() {
-  const pathname = usePathname();
-
-  return (
-    <nav className="flex shrink-0 sticky top-0 flex-col w-64 h-screen bg-yellow dark:bg-night gap-y-2 p-5">
-      <section className="flex flex-col w-full gap-y-2 mt-3">
-        {links.map(({ label, href, is_active }) => (
-          <Link
-            key={label}
-            href={href}
-            className={clsx(
-              "w-full capitalize font-semibold transition-colors hover:bg-[var(--secondary)] py-2 px-5 rounded-xl",
-              is_active(pathname) && "text-foreground bg-[var(--secondary)]"
-            )}
-          >
-            {label}
-          </Link>
-        ))}
-      </section>
-    </nav>
-  );
+export default async function Sidebar() {
+  const user = await get_user();
+  return <SidebarClient is_authenticated={Boolean(user)} />;
 }
