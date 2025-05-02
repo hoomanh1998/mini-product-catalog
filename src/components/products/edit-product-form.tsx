@@ -8,13 +8,13 @@ import { get_product_by_id } from '@/services/products/loaders';
 import SubmitButton from '../submit-button';
 
 interface EditProductFormProps {
-  product_id: string;
+  product_id?: string;
 }
 
 export default async function EditProductForm({
   product_id,
 }: EditProductFormProps) {
-  const product = await get_product_by_id(parseInt(product_id));
+  const product = await get_product_by_id(parseInt(product_id ?? ''));
 
   return (
     <form

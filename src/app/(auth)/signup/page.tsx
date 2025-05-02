@@ -2,9 +2,9 @@ import { redirect } from 'next/navigation';
 import { Routes } from 'constants/routes.constant';
 import { get_user } from '@/services/auth/loaders';
 import { Metadata } from 'next';
-import Input from '@/ui/input';
-import HeaderTitle from '@/ui/header-title';
-import SignupButton from '@/components/auth/signup-button';
+import Input from '@/ui/input/input';
+import HeaderTitle from '@/ui/header-title/header-title';
+import SignupButton from '@/components/auth/signup-button/signup-button';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

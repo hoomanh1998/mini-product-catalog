@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ProductModel } from "@/models/product.model";
-import Image from "next/image";
+import { ProductModel } from '@/models/product.model';
+import Image from 'next/image';
 
 interface ProductCardDefaultProps {
   product: ProductModel;
@@ -16,7 +16,6 @@ export default function ProductCardDefault({
         src={product.image_url}
         width={250}
         height={250}
-        priority
         alt={`${product.name} image`}
         className="aspect-square object-fill rounded-2xl"
       />
@@ -31,9 +30,9 @@ export default function ProductCardDefault({
         </p>
 
         <span className="font-semibold text-gray-900 dark:text-white ml-auto mt-auto">
-          {product.price.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
+          {product.price.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
           })}
         </span>
       </div>

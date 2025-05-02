@@ -1,16 +1,19 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 type UploadImageInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   error?: string;
 };
 
-export default function UploadImageInput({ ...props }: UploadImageInputProps) {
+export default function UploadImageInput({
+  label = 'Select Image',
+  ...props
+}: UploadImageInputProps) {
   const [image_url, set_image_url] = useState<string | null>(
-    props.defaultValue as string
+    props.defaultValue as string,
   );
 
   function handle_file_change(event: React.ChangeEvent<HTMLInputElement>) {
@@ -29,7 +32,7 @@ export default function UploadImageInput({ ...props }: UploadImageInputProps) {
 
   return (
     <div className="flex flex-col gap-y-1.5">
-      <label className="text-sm font-medium capitalize">Select Image</label>
+      <label className="text-sm font-medium capitalize">{label}</label>
 
       <div className="border border-foreground/30 p-6 rounded-xl">
         <input

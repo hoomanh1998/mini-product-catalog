@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
-export function Modal({ children }: { children: React.ReactNode }) {
+export default function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const dialog_ref = useRef<HTMLDialogElement>(null);
 

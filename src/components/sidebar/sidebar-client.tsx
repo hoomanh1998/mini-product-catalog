@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Routes } from '@/constants/routes.constant';
-import SignOutButton from '../auth/signout-button';
+import SignOutButton from '../auth/signout-button/signout-button';
 
 type SidebarClientProps = {
   is_authenticated: boolean;

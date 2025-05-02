@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import HeaderTitle from "@/ui/header-title";
-import EmptyProudctList from "@/ui/empty-products-list";
-import ProductCard from "@/components/product-card";
-import ProductCardTypeContainer from "@/components/product-card-type-container/product-card-type-container";
-import { use_product_card_type_store } from "@/store/product-card-type.store";
-import { ProductModel } from "@/models/product.model";
-import clsx from "clsx";
+import HeaderTitle from '@/ui/header-title/header-title';
+import EmptyProudctList from '@/ui/empty-products-list/empty-products-list';
+import ProductCard from '@/components/product-card/product-card';
+import ProductCardTypeContainer from '@/components/product-card-type-container/product-card-type-container';
+import { use_product_card_type_store } from '@/store/product-card-type.store';
+import { ProductModel } from '@/models/product.model';
+import clsx from 'clsx';
 
 interface HomePageClientProps {
   products_list: ProductModel[];
@@ -14,7 +14,7 @@ interface HomePageClientProps {
 
 export default function HomePageClient({ products_list }: HomePageClientProps) {
   const product_card_type = use_product_card_type_store(
-    (state) => state.product_card_type
+    (state) => state.product_card_type,
   );
 
   return (
@@ -30,9 +30,9 @@ export default function HomePageClient({ products_list }: HomePageClientProps) {
       {products_list.length > 0 && (
         <section
           className={`grid gap-5 ${clsx(
-            product_card_type === "default"
-              ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-              : "grid-cols-1 lg:grid-cols-2"
+            product_card_type === 'default'
+              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              : 'grid-cols-1 lg:grid-cols-2',
           )}`}
         >
           {products_list.map((product) => (

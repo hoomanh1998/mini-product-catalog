@@ -1,6 +1,6 @@
 'use server';
 
-import Sidebar from './sidebar';
+import Sidebar from '@/components/sidebar';
 
 export default async function LayoutShell({
   children,

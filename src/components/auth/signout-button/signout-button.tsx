@@ -2,7 +2,7 @@
 
 import { signout } from '@/services/auth/actions';
 import { useFormStatus } from 'react-dom';
-import Button from '@/ui/button';
+import Button from '@/ui/button/button';
 
 export default function SignOutButton() {
   const { pending } = useFormStatus();

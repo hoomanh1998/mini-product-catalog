@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
 import {
   ProductCardCompact,
   ProductCardDefault,
-} from "@/components/product-card-type";
-import { ProductModel } from "@/models/product.model";
+} from '@/components/product-card-type';
+import { ProductModel } from '@/models/product.model';
 
 interface ProductCardProps {
   product: ProductModel;
-  card_type?: "default" | "compact";
+  card_type?: 'default' | 'compact';
 }
 
 export default function ProductCard({ product, card_type }: ProductCardProps) {
-  return card_type === "compact" ? (
+  return card_type === 'compact' ? (
     <ProductCardCompact product={product} />
   ) : (
     <ProductCardDefault product={product} />

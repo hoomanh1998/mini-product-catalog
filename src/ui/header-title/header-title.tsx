@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
 interface HeaderTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   title: string;

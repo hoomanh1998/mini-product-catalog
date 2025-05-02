@@ -9,10 +9,9 @@ type EditProductPageProps = {
   searchParams: Promise<Record<string, string>> | undefined;
 };
 
-export default async function EditProductPage({
+export default async function EditProductFormPage({
   searchParams,
 }: EditProductPageProps) {
   const product_id = (await searchParams)?.product_id;
-
-  return <EditProductForm product_id={product_id ?? ''} />;
+  return <EditProductForm product_id={product_id} />;
 }

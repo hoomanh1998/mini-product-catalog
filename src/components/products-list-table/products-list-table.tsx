@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { PRODUCTS_LIST_TABLE_HEADERS } from "./products-list-table.constant";
-import { ProductModel } from "@/models/product.model";
-import { delete_product } from "@/services/products/actions";
-import { useTransition } from "react";
-import Image from "next/image";
-import DeleteIcon from "@/ui/icons/delete-icon";
-import Link from "next/link";
+import { PRODUCTS_LIST_TABLE_HEADERS } from './products-list-table.constant';
+import { ProductModel } from '@/models/product.model';
+import { delete_product } from '@/services/products/actions';
+import { useTransition } from 'react';
+import Image from 'next/image';
+import DeleteIcon from '@/ui/icons/delete-icon';
+import Link from 'next/link';
 
 export default function ProductsListTable({
   products,

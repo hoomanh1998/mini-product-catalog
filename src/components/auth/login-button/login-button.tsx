@@ -2,7 +2,7 @@
 
 import { login } from '@/services/auth/actions';
 import { useFormStatus } from 'react-dom';
-import Button from '@/ui/button';
+import Button from '@/ui/button/button';
 
 export default function LoginButton() {
   const { pending } = useFormStatus();

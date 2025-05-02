@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
-import { forwardRef } from "react";
+import clsx from 'clsx';
+import { forwardRef } from 'react';
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
@@ -12,8 +12,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, name, id, error, className, ...props }, ref) => {
     const input_id = id || name;
     const base_class_name =
-      "bg-background border border-foreground/30 text-base rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500";
-    const error_class_name = "border-red-500 focus:ring-red-500";
+      'bg-background border border-foreground/30 text-base rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500';
+    const error_class_name = 'border-red-500 focus:ring-red-500';
 
     return (
       <div className="flex flex-col gap-y-1.5">
@@ -32,7 +32,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           className={clsx(
             base_class_name,
             error && error_class_name,
-            className
+            className,
           )}
           {...props}
         />
@@ -44,9 +44,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
-Input.displayName = "Input";
+Input.displayName = 'Input';
 
 export default Input;

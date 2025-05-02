@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ProductModel } from "@/models/product.model";
-import Image from "next/image";
+import { ProductModel } from '@/models/product.model';
+import Image from 'next/image';
 
 interface ProductCardCompactProps {
   product: ProductModel;
@@ -30,9 +30,9 @@ export default function ProductCardCompact({
         </p>
 
         <span className="inline-block font-semibold text-gray-900 dark:text-white">
-          {product.price.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
+          {product.price.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
           })}
         </span>
       </div>
