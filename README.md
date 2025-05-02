@@ -12,7 +12,7 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
 
 ## 🧰 Tech Stack
 
-- **Frontend:** React, Next.js v15 (App Router)
+- **Frontend:** React, Next.js v15
 - **Styling:** Tailwind CSS v4
 - **State Management:** Zustand
 - **Backend:** Supabase (PostgreSQL)
@@ -24,8 +24,8 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
 
 ## 🛠️ Getting Started
 
-### 1. Clone the Repo
+### 1. Clone the Application Repo
 
 ```bash
 git clone https://github.com/hoomanh1998/mini-product-catalog.git
-cd product-catalog
+cd mini-product-catalog
