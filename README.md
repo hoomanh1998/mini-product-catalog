@@ -1,36 +1,31 @@
-# Your Project Name
+# Mini Product Catalog Application
 
-A modern web application built with [Next.js](https://nextjs.org/) and [React](https://react.dev/), using Supabase for backend and OpenAI for intelligent features.
+A mini product catalog application built with **React**, **Next.js 15**, **Tailwind CSS**, and **Supabase**. This project showcases front-end development, performance optimization, and optional AI integration — designed to demonstrate the skillset for a Senior Front-End Developer role at ClicTiv.
 
-## 🚀 Live Demo
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=YOUR_GITHUB_REPO_URL)
+### 🔗 Live Demo
 
-🔗 [Live Site](https://your-vercel-deployment-url.vercel.app)
+👉 [View Live App](https://your-vercel-app-url.vercel.app)
 
 ---
 
-## 🛠️ Project Setup & Local Development
+## 🧰 Tech Stack
 
-### Prerequisites
+- **Frontend:** React, Next.js v15 (App Router)
+- **Styling:** Tailwind CSS v4
+- **State Management:** Zustand
+- **Backend:** Supabase (PostgreSQL)
+- **Testing:** Jest
+- **Deployment:** Vercel
+- **Package Manager:** pnpm
 
-- Node.js (v18+ recommended)
-- pnpm
-- Supabase account & database
+---
 
-### Setup
+## 🛠️ Getting Started
+
+### 1. Clone the Repo
 
 ```bash
-# Clone the repo
 git clone https://github.com/hoomanh1998/mini-product-catalog.git
-cd your-repo
-
-# Install dependencies
-pnpm install
-
-# Set up environment variables
-cp .env.example .env.local
-# Fill in the required values in .env.local
-
-# Run development server
-pnpm dev
+cd product-catalog
