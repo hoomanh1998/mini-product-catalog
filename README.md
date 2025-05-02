@@ -20,6 +20,15 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
 - **Deployment:** Vercel
 - **Package Manager:** pnpm
 
+- | Column       | Type                       | Constraints     | Description           |
+| ------------ | -------------------------- | --------------- | --------------------- |
+| `id`         | `uuid`                     | `primary key`   | Unique product ID     |
+| `name`       | `text`                     | `not null`      | Product name          |
+| `price`      | `numeric`                  | `not null`      | Product price in USD  |
+| `image_url`  | `text`                     | `nullable`      | Link to product image |
+| `description`| `text`                     | `nullable`      | Product description   |
+| `created_at` | `timestamp with time zone` | `default now()` | Timestamp of creation |
+
 ---
 
 ## 🛠️ Getting Started
