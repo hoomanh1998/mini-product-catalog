@@ -152,6 +152,103 @@ Below are the REST API routes for `Products` table.
 
 ### `DELETE /api/products/:id`
 
+## 🧪 Testing Strategy
+
+This project uses **Jest** for unit testing.
+
+### Running Tests
+
+```bash
+pnpm test
+```
+
+### Configuration
+- Unit tests are located alongside components as `.test.tsx` files.
+- Jest is configured in `jest.config.ts` with jsdom environment.
+- Custom setup is done in `jest.setup.ts`.
+
+## ⚙️ CI/CD Pipeline
+This project uses GitHub Actions for CI:
+
+### `.github/workflows/ci.yml`
+```yml
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - frontend-challenge
+  pull_request:
+    branches:
+      - frontend-challenge
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run ESLint
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+
+  type-checking:
+    runs-on: ubuntu-latest
+    needs: linting
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run TypeScript check
+        run: npx tsc --noEmit
+
+  testing:
+    runs-on: ubuntu-latest
+    needs: type-checking
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Jest tests
+        run: pnpm test
+```
+
 ## 🚀 Live Demo App
 
 Live demo link: https://mini-product-catalog-eta.vercel.app
