@@ -15,15 +15,14 @@ A modern web application built with [Next.js](https://nextjs.org/) and [React](h
 ### Prerequisites
 
 - Node.js (v18+ recommended)
-- pnpm (or npm/yarn)
-- Supabase account & project
-- OpenAI API Key (if used)
+- pnpm
+- Supabase account & database
 
 ### Setup
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/hoomanh1998/mini-product-catalog.git
 cd your-repo
 
 # Install dependencies
