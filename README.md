@@ -8,8 +8,6 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
 
 👉 [View Live App](https://your-vercel-app-url.vercel.app)
 
----
-
 ## 🧰 Tech Stack
 
 - **Frontend:** React, Next.js v15
@@ -19,8 +17,6 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
 - **Testing:** Jest
 - **Deployment:** Vercel
 - **Package Manager:** pnpm
-  
----
 
 ## 📐 Database Schema
 products Table
