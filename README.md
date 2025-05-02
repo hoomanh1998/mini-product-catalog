@@ -23,14 +23,7 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
 ---
 
 📐 Database Schema
-products Table
-Column	Type	Constraints	Description
-id	uuid	primary key	Unique product ID
-name	text	not null	Product name
-price	numeric	not null	Product price in USD
-image_url	text	nullable	Link to product image
-category	text	nullable	Product category
-created_at	timestamp with time zone	default now()	Timestamp of creation
+<pre> #### `products` Table | Column | Type | Constraints | Description | |--------------|----------------------------|------------------------|---------------------------------| | `id` | `uuid` | `primary key` | Unique product ID | | `name` | `text` | `not null` | Name of the product | | `price` | `numeric(10, 2)` | `not null` | Price in USD | | `image_url` | `text` | `nullable` | URL to product image | | `category_id`| `uuid` | `foreign key → categories.id` | Reference to category | | `created_at` | `timestamp with time zone` | `default now()` | Product creation timestamp | </pre>
 
 ---
 
