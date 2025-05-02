@@ -4,7 +4,7 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project)
 
-### 🔗 Live Demo
+### 🔗 Live Demo on Vercel
 
 👉 [View Live App](https://your-vercel-app-url.vercel.app)
 
@@ -22,7 +22,7 @@ A mini product catalog application built with **React**, **Next.js 15**, **Tailw
   
 ---
 
-📐 Database Schema
+## 📐 Database Schema
 products Table
 
 Column	Type	Constraints	Description
